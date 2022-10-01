@@ -7,7 +7,7 @@
 To install VSCode follow this [link](https://code.visualstudio.com/Download) to the VSCode download website. 
 Once there, click on the download button for the opertating system that you are using and follow the steps to install VSCode from their website.
 
-![Image](LR1(11).png)
+![Image](LR(11).png)
 
 
 
