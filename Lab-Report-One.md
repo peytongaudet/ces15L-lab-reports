@@ -7,14 +7,14 @@
 To install VSCode follow this [link](https://code.visualstudio.com/Download) to the VSCode download website. 
 Once there, click on the download button for the opertating system that you are using and follow the steps to install VSCode from their website.
 
-![Image](LR1(1).png)
+![Image](LR1(11).png)
 
 
 
 **Part 2: Remotely Connecting**
 
 To remotely connect:
-1. Look up your course-specific account for CSE15L [here](https://code.visualstudio.com/Download) and follow the instructions provided.
+1. Look up your course-specific account for CSE15L [here](https://sdacs.ucsd.edu/~icc/index.php) and follow the instructions provided.
 
 2. Open a terminal in VSCode using Ctrl or Command + `. Then type in the command below: 
 ```
@@ -75,6 +75,6 @@ Below was my attempt to reduce the amount of keystrokes necessary to complete th
 ```
 $ ssh cs15lfa22lg@ieng6.ucsd.edu "java WhereAmI"
 ```
-Hopefully, I'll be able to look back on this at the end of the quarter and think that even this was too many keystrokes!
+Hopefully, I'll be able to look back on this at the end of the quarter and think that this was too many keystrokes, but I'm happy with its efficiency!
 
 ![Image](LR1(6).png)
