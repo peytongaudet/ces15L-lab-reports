@@ -71,7 +71,7 @@ After running this, you will be prompted to enter a preferably shorter passphras
 
 **Part 6: Optimizing Remote Running**
 
-Below was my attempt to reduce the amount of keystrokes necessary to complete the task of running the "WhereAmI" java program remotely. I shortened my passphrase a little more before starting this and ran the program while being logged in on my local computer. I was able to do this by using quotation marks around my command which directly runs the command, which in this case was the program, on the remote server, and then exit as shown below:
+Below was my attempt to reduce the amount of keystrokes necessary to complete the task of running the "WhereAmI" java program remotely. I shortened my passphrase a little more before starting this and ran the program while being logged in on my local computer. I was able to do this by using quotation marks around my command which directly runs the command, which in this case was the program, on the remote server, and then exits as shown below:
 ```
 $ ssh cs15lfa22lg@ieng6.ucsd.edu "java WhereAmI"
 ```
