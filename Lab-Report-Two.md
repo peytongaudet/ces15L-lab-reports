@@ -78,11 +78,11 @@ class StringServer
 ![Image](LR2.1.1.png)
 
 
-2. With the path "add" and the query "triangle" more methods are being used inside the "if" statement. First the getQuery() method is used and regex is used to split the query on both sides of the equal sign into parameters. With this, we can check that the first parameter is "s" using the equals() method indicating a String and add the second parameter to an ArrayList using the add() method with whatever String the user inputs. Again, The main method checks if theres a port number given as an argument in the terminal and starts the server.
+2. With the path "add" and the query "triangle" more methods are being used inside the "if" statement in the handleRequest() method. First the getQuery() method is used and regex is used to split the query on both sides of the equal sign into parameters. With this, we can check that the first parameter is "s" using the equals() method indicating a String and add the second parameter to an ArrayList using the add() method with whatever String the user inputs. Again, The main method checks if theres a port number given as an argument in the terminal and starts the server.
 ![Image](LR2.1.2.png)
 
-3. With the path "search" and the query "angle" a couple more methods are being used inside the "else if" statement. Again, the getQuery() method is used and regex is used to split the query on both sides of the equal sign into parameters and the first parameter is used with the equals() method to see if it is "s" which indicates a String. The second paremter this time is used in the contains() method to see if there is matching substring within the words that were put into the original ArrayList using the "add" path. If there is that word is returned. Here, rectangle, triangle, and square were added to the ArrayList and after using the "search" path and "angle" query, triangle and rectangle were returned.
-
+3. With the path "search" and the query "angle" a couple more methods are being used inside the "else if" statement in the handleRequest() method. Again, the getQuery() method is used and regex is used to split the query on both sides of the equal sign into parameters and the first parameter is used with the equals() method to see if it is "s" which indicates a String. The second paremter this time is used in the contains() method to see if there is matching substring within the words that were put into the original ArrayList using the "add" path. If there is, that word is returned. Here, rectangle, triangle, and square were added to the ArrayList and after using the "search" path and "angle" query, triangle and rectangle were returned. The main method checks if theres a port number given as an argument in the terminal and starts the server.
+![Image](LR2.1.3.png)
 
 **Part 2: Debugging**
 
@@ -93,8 +93,7 @@ class StringServer
 ![Image](LR2.2.2.png)
 * Bug + Connection:
 The bug was that the array was getting edited without storing the original values. So, arr[0] would get changed but that value was needed in order to make a swap at the end. The element at the end of the input array was moved to the front and then at the end, the last element was swapped with the first element. The first element had the same value as the last during this swap it makes sense that the symptom was that the last value was a 2 instead of a 1. The fix is below:
-![Image](LR2.2.5.png)
-The connection between the symptom and the bug was taht 
+![Image](LR2.2.5.png) 
 
 2. merge()
 * Failure-Inducing Input: With the first input array being {a, b, c} and the second input array being {d, e, f}, we expect to have a resulting array after running the merge method of {a, b, c, d, e, f}.
