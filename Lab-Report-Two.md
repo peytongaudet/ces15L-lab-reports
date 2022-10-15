@@ -14,24 +14,21 @@ class Handler implements URLHandler
 {
     // The one bit of state on the server: a number that will be manipulated by
     // various requests.
+    ArrayList<String> s1 = new ArrayList<String>();
+
     public String handleRequest(URI url) 
-    {
-        ArrayList<String> s1 = new ArrayList<String>();
-        
-        if (url.getPath().equals("/add")) 
+    {       
+        if (url.getPath().contains("/add")) 
         {
             String[] parameters = url.getQuery().split("=");
             if(parameters[0].equals("s"))
             {
                 s1.add(parameters[1]);
-            }
-            for (String s : s1)
-            {
-                return s;
+                return String.format("%s", parameters[1]);
             }
         } 
         
-        else if (url.getPath().equals("/search")) 
+        else if (url.getPath().contains("/search")) 
         {
             String[] parameters = url.getQuery().split("=");
             if(parameters[0].equals("s"))
@@ -46,15 +43,15 @@ class Handler implements URLHandler
                 }
                 
                 String ret = "";
-
                 for(String s : s2)
                 {
                     ret = ret + " " + s;
                 }
                 return ret;
+                
             }    
         } 
-        return "404 Not found";
+        return "Enter path + query commands:";
     }
 }
 class StringServer 
@@ -72,16 +69,18 @@ class StringServer
         Server.start(port, new Handler());
     }
 }
+
+
 ```
 
 1. With no path or query after the url, the website returns "Enter path + query commands:". With this input, the only methods being used are the handleRequest() method which does not go inside the if or else if statements, returning the last statement which appears on the page. The main method checks if theres a port number given as an argument in the terminal and starts the server.
 ![Image](LR2.1.1.png)
 
 
-2. With the path "add" and the query "triangle" more methods are being used inside the "if" statement in the handleRequest() method. First the getQuery() method is used and regex is used to split the query on both sides of the equal sign into parameters. With this, we can check that the first parameter is "s" using the equals() method indicating a String and add the second parameter to an ArrayList using the add() method with whatever String the user inputs. Again, The main method checks if theres a port number given as an argument in the terminal and starts the server.
+2. With the path "add" and the query "triangle" more methods are being used inside the "if" statement in the handleRequest() method. First the getQuery() method is used and split() is used to split the query on both sides of the equal sign into parameters. With this, we can check that the first parameter is "s" using the equals() method indicating a String and add the second parameter to an ArrayList using the add() method with whatever String the user inputs. Again, The main method checks if theres a port number given as an argument in the terminal and starts the server.
 ![Image](LR2.1.2.png)
 
-3. With the path "search" and the query "angle" a couple more methods are being used inside the "else if" statement in the handleRequest() method. Again, the getQuery() method is used and regex is used to split the query on both sides of the equal sign into parameters and the first parameter is used with the equals() method to see if it is "s" which indicates a String. The second paremter this time is used in the contains() method to see if there is matching substring within the words that were put into the original ArrayList using the "add" path. If there is, that word is returned. Here, rectangle, triangle, and square were added to the ArrayList and after using the "search" path and "angle" query, triangle and rectangle were returned. The main method checks if theres a port number given as an argument in the terminal and starts the server.
+3. With the path "search" and the query "angle" a couple more methods are being used inside the "else if" statement in the handleRequest() method. Again, the getQuery() method is used and split() is used to split the query on both sides of the equal sign into parameters and the first parameter is used with the equals() method to see if it is "s" which indicates a String. The second paremter this time is used in the contains() method to see if there is matching substring within the words that were put into the original ArrayList using the "add" path. If there is, that word is returned. Here, rectangle, triangle, and square were added to the ArrayList and after using the "search" path and "angle" query, triangle and rectangle were returned. The main method checks if theres a port number given as an argument in the terminal and starts the server. *Triangle gets returned twice because it was added twice.*
 ![Image](LR2.1.3.png)
 
 **Part 2: Debugging**
