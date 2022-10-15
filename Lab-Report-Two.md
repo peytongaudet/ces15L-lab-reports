@@ -74,10 +74,14 @@ class StringServer
 }
 ```
 
+1. With no path or query after the url, the website returns "Enter path + query commands:". With this input, the only methods being used are the handleRequest() method which does not go inside the if or else if statements, returning the last statement which appears on the page. The main method checks if theres a port number given as an argument in the terminal and starts the server.
 ![Image](LR2.1.1.png)
 
 
+2. With the path "add" and the query "triangle" more methods are being used inside the "if" statement. First the getQuery() method is used and regex is used to split the query on both sides of the equal sign into parameters. With this, we can check that the first parameter is "s" using the equals() method indicating a String and add the second parameter to an ArrayList using the add() method with whatever String the user inputs. Again, The main method checks if theres a port number given as an argument in the terminal and starts the server.
 ![Image](LR2.1.2.png)
+
+3. With the path "search" and the query "angle" a couple more methods are being used inside the "else if" statement. Again, the getQuery() method is used and regex is used to split the query on both sides of the equal sign into parameters and the first parameter is used with the equals() method to see if it is "s" which indicates a String. The second paremter this time is used in the contains() method to see if there is matching substring within the words that were put into the original ArrayList using the "add" path. If there is that word is returned. Here, rectangle, triangle, and square were added to the ArrayList and after using the "search" path and "angle" query, triangle and rectangle were returned.
 
 
 **Part 2: Debugging**
@@ -87,15 +91,15 @@ class StringServer
 ![Image](LR2.2.1.png)
 * Symptom: The symptom occurred at the element at index 2 where it was supposed to be a 1 but instead we got 2. It says that there was an array in our assertion because our exepcted value and actual value did not match.
 ![Image](LR2.2.2.png)
-* Bug:
-The bug was that the array was getting edited without saving the original values. So, arr[0] would get changed but that value was needed in order to make a swap at the end. The fix is below:
+* Bug + Connection:
+The bug was that the array was getting edited without storing the original values. So, arr[0] would get changed but that value was needed in order to make a swap at the end. The element at the end of the input array was moved to the front and then at the end, the last element was swapped with the first element. The first element had the same value as the last during this swap it makes sense that the symptom was that the last value was a 2 instead of a 1. The fix is below:
 ![Image](LR2.2.5.png)
-
+The connection between the symptom and the bug was taht 
 
 2. merge()
-* Failure-Inducing Input: With the first input array being {a, b, c} and the second input array being {d, e, f}, we expect to have a resulting array after running the merge method of {a, b, c, d, e, f}
+* Failure-Inducing Input: With the first input array being {a, b, c} and the second input array being {d, e, f}, we expect to have a resulting array after running the merge method of {a, b, c, d, e, f}.
 ![Image](LR2.2.3.png)
 * Symptom: The symptom was an infinite loop and would have occured for near all inputs. The terminal output tells us that the program caused us to run out of memory and it took 13.615 seconds to execute. For such a small program that should not be the case and it seems clear from the error message and time that an infinite loop occured.
 ![Image](LR2.2.4.png)
-* Bug: The bug in the program was in the last while loop of the merge method. Instead of incrementing index2, index1 was incremented. This caused index2 to never be greater the list2.size() and therefore, the while loop was never broken. The fix is below:
+* Bug + Connection: The bug in the program was in the last while loop of the merge method. Instead of incrementing index2, index1 was incremented. This caused index2 to never be greater the list2.size() and therefore, the while loop was never broken. It makes sense that the symptom was a clear infinite loop and that the program took that long to run and that we ran out of memory in the process. The fix is below:
 ![Image](LR2.2.6.png)
