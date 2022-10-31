@@ -14,7 +14,7 @@ If none are found, 0 gets printed.
 % grep -c "string that will not be found" output1.txt
 0
 ```
-If you search without putting the .txt files into a new .txt file, the output lists every single file matching the format and reports how many matching lines are in each file. A few lines of output are shown below:
+If you search without putting the .txt files into a new .txt file, the output lists every file matching the format (even the ones without the matched part) and reports how many matching lines are in each file. A few lines of output are shown below:
 ```
 % grep -c "research" technical/*/*.txt
 technical/plos/pmed.0020246.txt:5
