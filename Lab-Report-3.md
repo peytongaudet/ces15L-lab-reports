@@ -3,7 +3,7 @@
 
 **Part 1: grep -c**
 
-The command grep -c displays the count of lines that match a pattern.
+The command grep -c displays the count of lines that match a pattern. This can be useful for finding how often a certain pattern shows up in text.
 ``` 
 % cat technical/*/*.txt > output1.txt
 % grep -c "taxation" output1.txt
@@ -26,7 +26,7 @@ technical/plos/pmed.0020258.txt:4
 
 **Part 2: grep -n**
 
-The command grep -n displays the matched lines and their line numbers.
+The command grep -n displays the matched lines and their line numbers. This can be useful for finding where a match is in the text.
 
 ```
 % grep -n "taxation" output1.txt 
@@ -52,7 +52,7 @@ technical/plos/pmed.0020249.txt:53:        biomedical intervention aiming to pro
 **Part 3: grep -o**
 
 The command grep -o prints only the matched parts of a matching line,
-with each match on a separate output line.
+with each match on a separate output line. This command option looks like it is less useful than the others as printing the matched part over and over seems redundant. However, it can still be used to find matched texts in files.
 ```
 % cat technical/*/*.txt > output1.txt
 % grep -o "taxation" output1.txt
