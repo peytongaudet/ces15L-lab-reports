@@ -29,6 +29,7 @@ technical/plos/pmed.0020258.txt:4
 The command grep -n displays the matched lines and their line numbers. This can be useful for finding where a match is in the text.
 
 ```
+% cat technical/*/*.txt > output1.txt
 % grep -n "taxation" output1.txt 
 225839:        tobacco control strategy, including legislation, taxation,
 518533:        could be via general taxation, although in countries with a private health insurance system
@@ -41,7 +42,7 @@ If no matched lines are found, nothing gets returned.
 ```
 
 
-If you search without putting the .txt files into a new .txt file, the output lists every file with the pattern and reports the line where the match is found. A few lines of output are shown below:
+If you search without putting the .txt files into a new .txt file, the output lists every file with the matched pattern and ouputs the line where the match is found along with the line itself. A few lines of output are shown below:
 ```
 % grep -n "biomed" technical/*/*.txt
 technical/plos/pmed.0020212.txt:170:        other biomedical disorders. The alternative possibility is that the current findings are
@@ -72,3 +73,4 @@ If you search without putting the .txt files into a new .txt file, the output li
 technical/biomed/1471-2105-4-26.txt:research paper
 technical/biomed/1472-6920-2-3.txt:research paper
 technical/plos/journal.pbio.0020145.txt:research paper
+```
