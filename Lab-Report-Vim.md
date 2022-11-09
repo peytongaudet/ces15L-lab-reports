@@ -27,9 +27,9 @@ While in insert mode and at the correct spot where I needed to change the name o
 
 Using the command `n` repeated the last search that I made. So, it found the next instance of start which needed to be changed. The `.` command repeats the previous commands which were explained in steps 2 and 3. There was one more instance of start that needed to get changed to base so we used the same sequence of commands to acheive. Now, our goal is complete.
 
-`n`
+Using `n`:
 ![Image](vim.1.4.1.png)
-`.`
+Using `.`:
 ![Image](vim.1.4.2.png)
 
 5. `:wq`
