@@ -223,7 +223,7 @@ OK (1 test)
 2. X
 3. 0
 
-*if [[ $? -eq 0 ]] The condition is TRUE because the previous command executed with error code 0 ("OK" was found). Only the THEN part of this IF statement is executed and the ELSE part is ignored.*
+***if [[ $? -eq 0 ]] The condition is TRUE because the previous command executed with error code 0 ("OK" was found). Only the THEN part of this IF statement is executed and the ELSE part is ignored.***
 
 **echo "Test methods were successful. (PASS)**
 1. Test methods were successful. (PASS)
