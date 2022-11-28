@@ -1,7 +1,7 @@
 # CSE 15L Lab Report Gradescript
 ## Peyton Gaudet (A17573280)
 
-**Part 1: Testing on given repositories**
+**Part 1: Testing on Given Repositories**
 
 1. list-methods-lab3
 ![Image](LRgs1.1.png)
