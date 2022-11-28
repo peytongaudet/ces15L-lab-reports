@@ -129,7 +129,7 @@ warning: unable to access '/Users/peyton/.config/git/attributes': Permission den
 2. X
 3. 0
 
-*if [[ -e "ListExamples.java" ]] The condition is TRUE because ListExamples.java was found. Only the THEN part of this IF statement executes in this case and the ELSE part is ignored.*
+***if [[ -e "ListExamples.java" ]] The condition is TRUE because ListExamples.java was found. Only the THEN part of this IF statement executes in this case and the ELSE part is ignored.***
 
 **echo "ListExamples.java found. (PASS)"**
 1. ListExamples.java found. (PASS)
@@ -186,7 +186,7 @@ warning: unable to access '/Users/peyton/.config/git/attributes': Permission den
 2. X
 3. 0
 
-*if [[ $? -eq 0 ]] The condition is TRUE because the previous command executed with error code 0 (The file compiled). Only the THEN part of this IF statement is executed and the ELSE part is ignored.*
+***if [[ $? -eq 0 ]] The condition is TRUE because the previous command executed with error code 0 (The file compiled). Only the THEN part of this IF statement is executed and the ELSE part is ignored.***
 
 **echo "ListExamples.java compiled successfully. (PASS)"**
 1. ListExamples.java compiled successfully. (PASS)
@@ -198,7 +198,7 @@ warning: unable to access '/Users/peyton/.config/git/attributes': Permission den
 2. X
 3. 0
 
-*if [[ $? -eq 0 ]] The condition is TRUE because the previous command executed with error code 0 (The tests compiled). Only the THEN part of this IF statement is executed and the ELSE part is ignored.*
+***if [[ $? -eq 0 ]] The condition is TRUE because the previous command executed with error code 0 (The tests compiled). Only the THEN part of this IF statement is executed and the ELSE part is ignored.***
 
 **echo "TestListExamples.java compiled successfully. (PASS)"**
 1. TestListExamples.java compiled successfully. (PASS)"
