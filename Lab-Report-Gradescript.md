@@ -84,7 +84,7 @@ else
 fi
 ```
 
-* Note: 1) will be for stdout, 2) will be for stderr, 3) will be for exit code. X will represent no output.
+* Note: 1) will be for the stdout, 2) will be for the stderr, 3) will be for the return code. X will represent no output.
 
 **set -e**
 
