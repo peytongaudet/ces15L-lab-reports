@@ -17,19 +17,18 @@
 
 My grade.sh script:
 ```
-# Create your grading script here
-
 set -e
-
-rm -rf combine
-rm -rf student-submission
-git clone $1 student-submission > dontneed.txt 2> dontneed2.txt
 
 echo "If you see (FAIL), please fix the error and resubmit. 4 (PASS) notifications are requried for credit."
 echo ""
 echo ""
 
-#2
+#1. Clone the repository
+rm -rf combine
+rm -rf student-submission
+git clone $1 student-submission > dontneed.txt 2> dontneed2.txt
+
+#2. Check if file exists
 cd student-submission
 if [[ -e "ListExamples.java" ]]
 then
@@ -39,7 +38,7 @@ else
     exit 1
 fi
 
-#3
+#3 Get student code and test into same directory
 cd ..
 mkdir combine
 
@@ -51,10 +50,10 @@ cp TestListExamples.java /Users/peyton/Documents/GitHub/list-examples-grader/com
 
 rm /Users/peyton/Documents/GitHub/list-examples-grader/student-submission/ListExamples.java
 
-#4
+#4 Compile tests and student code
 cd combine
-
 set +e
+
 javac ListExamples.java 2> compileLE.txt
 if [[ $? -eq 0 ]]
 then
@@ -64,13 +63,14 @@ else
     exit 1
 fi
 
-
 javac -cp .:../lib/hamcrest-core-1.3.jar:../lib/junit-4.13.2.jar TestListExamples.java 2> compileTLE.txt
 if [[ $? -eq 0 ]]
 then
     echo "TestListExamples.java compiled successfully. (PASS)"
     echo "Running Test Methods..."
     java -cp .:../lib/hamcrest-core-1.3.jar:../lib/junit-4.13.2.jar org.junit.runner.JUnitCore TestListExamples > feedback.txt    
+    
+    #5 Give feedback based on tests
     grep "OK" feedback.txt > dontneed3.txt
     if [[ $? -eq 0 ]]
     then
